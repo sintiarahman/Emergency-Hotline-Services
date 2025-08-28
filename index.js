@@ -54,3 +54,46 @@ function logCall(name,number){
 clearBtn.addEventListener("click", () => {
   historyList.innerHTML = "";
 });
+
+
+let copyCount=0
+let copyButtons = document.querySelectorAll(".copy-btn");
+let callButtons = document.querySelectorAll(".call-btn");
+let navbarCopy = document.getElementById("navbar-copy-btn")
+let historyLists = document.getElementById("history-list");
+for (let i = 0; i < copyButtons.length; i++) {
+  copyButtons[i].addEventListener("click", function() {
+    let number = this.getAttribute("data-number");
+     navigator.clipboard.writeText(number);
+     alert("Copied: " + number);
+     copyCount++;
+     navbarCopy.textContent = copyCount + " Copy"
+      });
+}
+
+for (let i = 0; i < callButtons.length; i++) {
+  callButtons[i].addEventListener("click", function() {
+    let number = this.parentElement.querySelector(".copy-btn").getAttribute("data-number");
+    let time = new Date().toLocaleTimeString();
+    
+    let entry = document.createElement("p");
+    entry.textContent = "Called " + number + " at " + time;
+      if (historyLists.firstChild) {
+      historyLists.insertBefore(entry, historyLists.firstChild);
+    } else {
+      historyLists.appendChild(entry);
+    }
+ });
+};
+
+
+
+
+    
+
+
+  
+    
+  
+
+ 
