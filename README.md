@@ -24,8 +24,11 @@ Answer:  preventDefault() Stops the browser’s default action for an event.
 Example: Preventing a form from submitting on click.
          stopPropagation() Stops the event from bubbling up to parent elements.
 Example: Clicking a child element doesn’t trigger parent’s event listener.
+<<<<<<< HEAD
 
 
 
 
 
+=======
+>>>>>>> cb94c957dc751bec1234a93a007bbf48a19fd3b7
