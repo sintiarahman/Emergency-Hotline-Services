@@ -35,3 +35,22 @@ document.getElementById("history-list").innerHTML+=name +"-"+num+"<br>"
 
     })
 });
+
+
+//clear button...........
+const historyList = document.getElementById("history-list")
+const clearBtn = document.getElementById("clear-history");
+
+function logCall(name,number){
+   historyList.innerHTML = 
+    '<div class="flex justify-between items-center border-b px-2 py-2">'+
+     ' <div>'
+       ' <span class="font-medium">${name}</span><br>'+
+        '<span class="text-sm text-gray-600">${number}</span>'+
+     ' </div>'+
+    '</div>'
+   + historyList.innerHTML;
+}
+clearBtn.addEventListener("click", () => {
+  historyList.innerHTML = "";
+});
